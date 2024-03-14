@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Thowfic Asmi - Portfolio</title>
+
+    <script>
+        function submitRecommendation() {
+            // Get the recommendation text
+            var recommendationText = document.getElementById('new-recommendation').value;
+
+            // Check if the recommendation text is not empty
+            if (recommendationText.trim() !== '') {
+                // Display a popup thanking for leaving the recommendation
+                alert('Thanks for leaving the recommendation!');
+                
+                // Optionally, you can add the new recommendation to the existing list
+                var newRecommendation = document.createElement('div');
+                newRecommendation.classList.add('single-recommendation');
+                newRecommendation.innerHTML = '<h3>New Recommender</h3><p>"' + recommendationText + '"</p>';
+                document.getElementById('recommendation-container').appendChild(newRecommendation);
+
+                // Clear the textarea
+                document.getElementById('new-recommendation').value = '';
+            } else {
+                // Alert if the recommendation text is empty
+                alert('Please enter a recommendation before submitting.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Thowfic Asmi</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Project Details</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#recommendations">Recommendations</a></li>
+        </ul>
+    </nav>
+    <section id="about">
+        <div class="profile">
+            <h2>About</h2>
+            <img src="web 1.jpg" alt=" Cat image">
+            <h2>Thowfic Asmi</h2>
+            <p>I'm studying ece 2nd year</p>
+        </div>
+    </section>
+    <section id="skills">
+        <div class="skill">
+            <h2>Skills</h2>
+            <img src="html logo.png" alt="HTML Logo">
+            <ul>
+                <li>HTML</li>
+                <li>Cloud Computing</li>
+                <li>Data Analyst</li>
+                <li>Data Visualization</li>
+                <li>Arduino Programming</li>
+                <li>Tinkercad</li>
+              </ul>
+        </div>
+        <!-- Add more skills as needed -->
+    </section>
+    <section id="projects">
+        <!-- Your project details here -->
+        <h2>Project</h2>
+        <ol>
+            <li>Portfolio</li>
+            <li>Heartpulse sensor</li>
+            <li>Autonomous lawn mower</li>
+          </ol>
+        
+    </section>
+    <section id="recommendations">
+        <div class="recommendation">
+            <h2>Recommendations</h2>
+            <p>Here are some recommendations for Thowfic Asmi:</p>
+            
+            <!-- Recommendation 1 -->
+            <div class="single-recommendation">
+                <h3>Aswin</h3>
+                <p>"Thowfic is an excellent learner with great problem-solving skills."</p>
+            </div>
+            
+            <!-- Recommendation 2 -->
+            <div class="single-recommendation">
+                <h3>Zulfa</h3>
+                <p>"I highly recommend Thowfic for his dedication and hard work."</p>
+            </div>
+    
+            <!-- Add more recommendations as needed -->
+    
+            <!-- Form for submitting new recommendation -->
+<form id="recommendation-form">
+    <label for="new-recommendation">Add your recommendation:</label>
+    <textarea id="new-recommendation" name="new-recommendation" rows="4" cols="50"></textarea>
+    <!-- Change the type to button and add an onclick event -->
+    <button type="button" onclick="submitRecommendation()">Submit Recommendation</button>
+</form>
+
+        </div>
+    </section>
+    
+    <footer>
+        <a href="#about" class="home-icon">Home</a>
+    </footer>
+    
+</body>
+</html>
